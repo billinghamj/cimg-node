@@ -35,7 +35,7 @@ Stub text.
 Working on CircleCI Docker images.
 
 ### Adding new Node versions
-To add a new version of Rust, add it to the [`versions` array in the `manifests` file](https://github.com/CircleCI-Public/cimg-node/blob/master/manifest#L5), as well as to the [`node-version` pipeline parameter `enum` at the top of the `config.yml` file](https://github.com/CircleCI-Public/cimg-node/blob/master/.circleci/config.yml#L31).
+To add a new version of Node, add it to the [`versions` array in the `manifests` file](https://github.com/CircleCI-Public/cimg-node/blob/master/manifest#L5), as well as to the [`node-version` pipeline parameter `enum` at the top of the `config.yml` file](https://github.com/CircleCI-Public/cimg-node/blob/master/.circleci/config.yml#L31).
 
 ### Commits to non-master branches
 Upon successful commits to non-master branches of this repository, Node versions of this image will be pushed to `ccitest/node` for any requisite post-deployment testing. Tags there will represent the branch and commit hash that triggered them. For example, a successful commit to a branch of this repository called `dev` would result in the creation of the following image/tag: `ccitest/node:<node-version>-dev-${CIRCLE_SHA1:0:7}"`, where `${CIRCLE_SHA1:0:7}"` represents the first six characters of that particular commit hash.
